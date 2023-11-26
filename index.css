@@ -2,8 +2,12 @@
 
 /* Nav Styles */
 
-
+body{
+    margin: 0;
+    padding: 0;
+}
 nav{
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -62,6 +66,9 @@ nav > img{
 }
 
 @media (width <=500px){
+    nav{
+        height: 75px;
+    }
     nav > img{
         margin-left: 0;
         height: 50px;
@@ -85,6 +92,132 @@ nav > img{
     }
 }
 
+/* Hero section */
+
+.hero-section{
+    height: 760px;
+    background-image: url('./assets/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;    
+}
+
+.hero-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 50px;
+}
+
+
+.head{
+    background-color: #00000000;
+}
+
+
+.head>h1{
+    color: #ffffff;
+    background-color: #00000000;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.head>h1>span{
+    color: #bf0603;
+    background-color: #00000000;
+}
+
+.head>h2{
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 100;
+    margin: 5px;
+}
+
+@media (width<=500px) {
+    .hero-section {
+        height: 800px;
+        flex-direction: column;
+        padding-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+    .head{
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .head>h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+    .head>h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.form > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.input > input{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: large;
+}
+
+
+.input > p{
+    font-size: large;
+    margin-bottom: 4px;
+        
+}
+
+@media (width<=500px) {
+    .input> input{
+        width: 250px;
+    }
+    .form>h1{
+        margin: 5px;
+    }
+
+    .form{
+        padding: 20px;
+    }
+}
+
+.submit-btn{
+    border: 0;
+    background: #000000;
+    color: #f8f8f8;
+    font-family: inherit;
+    padding: 2% 5%;
+    font-size: 16px;
+    border-radius: 4px;
+    max-width: 90%;
+    margin-top: 20px;
+}
+
+/* Hero section */
 
 /*  */
 .container{
@@ -161,11 +294,7 @@ nav > img{
 }
 
 
-/* Hero styles */
 
-.hero-section{
-    margin-top: 100px;
-}
 
 
 
