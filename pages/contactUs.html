@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/ContactUs.css">
+    <title>Contact Page</title>
+    <!-- Add the Google Maps API script here -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <!-- Remove the background-image style -->
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./aboutUs.html">About</a></li>
+                    <li><a href="">Courses</a></li>
+                    <li><a href="./contactUs.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <div class="contact-container">
+        <iframe class="left-col"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15195.890370129258!2d74.3955550966623!3d17.79298516206121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3b80000ffabbb%3A0x8805ef9216d347dd!2sKulakjai%2C%20Maharashtra%20415503!5e0!3m2!1sen!2sin!4v1701174459382!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="right-col">
+            <h1>Contact us</h1>
+
+            <form id="contact-form" method="post">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                <label for="message">Message</label>
+                <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea>
+                <!-- Add this div to display the clicked address -->
+                <div id="clicked-address"></div>
+                <button type="submit" id="submit" name="submit">Send</button>
+            </form>
+
+            <div id="error"></div>
+            <div id="success-msg"></div>
+        </div>
+    </div>
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, quisquam cum. Quia dolore maxime error,
+            <br />eum eaque ex tenetur architecto optio repellendus culpa, aliquid dignissimos possimus alias porro iure
+            hic!
+        </p>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    </section>
+  
+    <!-- Add this script to ensure initialization of Google Maps -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initMap();
+        });
+    </script>
+    <script src="../scripts/contactUs.js"></script>
+</body>
+</html>
