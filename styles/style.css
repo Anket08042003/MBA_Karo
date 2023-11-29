@@ -176,8 +176,9 @@ p{
 .uni-col img{
     width: 100%;
     display: block;
-    height: 100px;
-    background-size: cover;
+    /* height: 100px;
+    background-size: cover; */
+
    
 }
 h3{
@@ -212,7 +213,7 @@ h3{
     }
 }
 .courses-col{
-    flex-basis: 32%;
+    flex-basis: 22%;
     border-radius: 10px;
     margin-bottom:30px;
     position: relative;
@@ -220,11 +221,18 @@ h3{
     
 }
 .courses-col img{
-    width: 100%;
+    width: 150px;
+    height:auto;
     display: block;
+    margin: 0 auto;
    
 }
-
+.courses-col h3{
+    width: 100%;
+    font-size: 20px;
+    display: block;
+    
+}
 .layer{
     background: transparent;
     height:100%;
@@ -272,16 +280,24 @@ h3{
     text-align: left;
 }
 .facility-col img{
-    width: 100%;
-    border-radius: 10px;
+    width: 150px;
+    height:auto;
+    display: block;
+    margin: 0 auto;
+   
 }
 .facility-col p {
-    padding: 0;
+    font-size:14px;
+    font-weight:300px;
+    line-height: 22px;
+    padding: 10px;
+    text-align: center;
+    
 }
 .facility-col h3{
     margin-top: 16px;
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center;
 }
 
 /* ---------- */
