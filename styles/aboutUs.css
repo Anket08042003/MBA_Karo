@@ -5,7 +5,28 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #FCFDFD;
 }
+#dark-mode-toggle {
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Show pointer cursor on hover */
+    display: flex; /* Use flex display to align icon */
+    align-items: center; /* Center icon vertically */
+}
 
+#dark-mode-icon {
+    color: #000000; /* Black color for the icon in light mode */
+    transition: color 0.5s; /* Add a transition for a smooth color change */
+}
+
+/* Dark mode styles */
+body.dark-mode #dark-mode-icon {
+    color: #ffffff; /* White color for the icon in dark mode */
+}
+/* Add this in your existing CSS file or in a separate file */
+body.dark-mode {
+    background-color: #1f1f1f; /* Dark background color */
+    color: #ffffff; /* Light text color for better readability on dark background */
+  }
 * {
     margin: 0;
     box-sizing: border-box;
@@ -82,7 +103,7 @@ nav {
 .about-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .about-content {
@@ -215,4 +236,66 @@ button:active {
     .sidebar-button:hover {
         opacity: 0.7;
     }
+}
+
+
+
+
+.about-content p{
+    padding: 0;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 16px;
+    word-spacing: 3px;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recuiters {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+@media (max-width: 700px) {
+    .recuiters {
+        padding: 0;
+    }
+}
+
+.recuiters-col {
+    flex-basis: 25%;
+    border-radius: 10px;
+    margin: 0 10px 30px;
+    position: relative;
+    overflow: hidden;
+    height: auto; /* Change fixed height to auto */
+
+    /* Added the following lines to control image appearance */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recuiters-col img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.recuiters-col h3 {
+    width: 100%;
+    font-size: 20px;
+    display: block;
+}
+
+.recuiters h1{
+    font-size: 36px;
+    font-weight: 600;
+    align-items: center;
 }
