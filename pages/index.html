@@ -10,6 +10,64 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="service-worker" href="/service-worker.js">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js', { scope: '/pages/' }).then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+
+            });
+        }
+        function triggerPushNotification() {
+    // Check if PushManager is supported
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+        // Check if permission has been granted already
+        if (Notification.permission === 'granted') {
+            // Register the service worker
+            navigator.serviceWorker.ready.then(function(registration) {
+                // Convert data to JSON format
+                var data = {
+                    method: "pushMessage",
+                    message: "Abhishek here"
+                };
+                // Trigger push event with the specified data
+                registration.showNotification("Abhishek's MBAKaro", {
+                    data: JSON.stringify(data)
+                });
+            });
+        } else {
+            // Permission hasn't been granted yet, request it
+            Notification.requestPermission().then(function(permission) {
+                if (permission === 'granted') {
+                    // Permission granted, trigger push notification
+                    triggerPushNotification();
+                } else {
+                    console.error('Notification permission denied');
+                }
+            });
+        }
+    }
+
+}
+function requestNotificationPermission() {
+    Notification.requestPermission().then(function(permission) {
+        if (permission === 'granted') {
+            console.log('Notification permission granted');
+        } else {
+            console.error('Notification permission denied');
+        }
+    });
+}
+
+
+
+    </script>
+
 </head>
 
 <body>
@@ -24,15 +82,15 @@
                     <li><a href="#courses" data-scroll>Courses</a></li>
                     <li><a href="/pages/contactUs.html">Contact Us</a></li>
                     <li><i id="dark-mode-toggle" onclick="toggleDarkMode()">
-                        <i id="dark-mode-icon" class="fas fa-sun"></i>
+                            <i id="dark-mode-icon" class="fas fa-sun"></i>
 
-                    </i></li>
+                        </i></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
         <!-- Add this button inside the body of your HTML -->
-        
+
 
         <div class="text-box">
             <h1>Unlock your potential with MbaKaro</h1>
@@ -346,7 +404,10 @@
 
     <section class="cta">
         <h1>Enroll course and know more</h1>
-        <a href="./contactUs.html" class="hero-btn">Contact us</a>
+        <!-- Add button to trigger push notification -->
+        <button onclick="triggerPushNotification()" class="hero-btn">Trigger Push Notification</button>
+        <button onclick="requestNotificationPermission()" class="hero-btn">Request Notification Permission</button>
+
     </section>
     <section class="footer">
         <h4>About Us</h4>

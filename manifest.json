@@ -1,0 +1,15 @@
+{
+    "name": "MbaKaro-Distance Learning Guide",
+    "short_name": "MbaKaro",
+    "icons": [
+      {
+        "src": "./images/college.jpg",
+        "sizes": "6720x4480",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+  }
+  
